@@ -16,7 +16,7 @@ public class Rtan : MonoBehaviour
     void Start()
     {
         Application.targetFrameRate = 60;
-        renderer = GetComponent<SpriteRendere>();
+        renderer = GetComponent<SpriteRenderer>();
         Debug.Log("안녕");
     }
 
