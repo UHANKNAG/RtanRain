@@ -20,7 +20,17 @@ public class Rtan : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(transform.position.x > 2.6f)
+        {
+            
+            direction = -0.05f;
+        }
+
+        if(transform.position.x < -2.6f)
+        {
+            direction = 0.05f;
+        }
+
         transform.position += Vector3.right * direction;
                             // == new Vector3(1f, 0, 0);
 
