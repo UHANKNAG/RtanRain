@@ -17,18 +17,26 @@ public class Rtan : MonoBehaviour
     {
         Application.targetFrameRate = 60;
         renderer = GetComponent<SpriteRenderer>();
+        // GetComponent는 해당 스크립트가 있는 Inspector에 있는 것이어야만 불러올 수 있음
         Debug.Log("안녕");
     }
 
     // Update is called once per frame
     void Update()
     {
+        // 마우스를 클릭하면, 이동 방향을 바꾸고, 르탄이 이미지도 반전
+        if (Input.GetMouseButtonDown(0))
+        {
+            direction *= -1;
+            renderer.flipX = !renderer.flipX;
+        }
+    
+        // 화면 밖으로 넘어가지 않도록 구역 설정정
         if(transform.position.x > 2.6f)
         {
-            renderer.flipX = true;
+            renderer.flipX = true;  // 르탄이 이미지의 방향 설정정
             direction = -0.05f;
         }
-
         if(transform.position.x < -2.6f)
         {
             renderer.flipX = false;
