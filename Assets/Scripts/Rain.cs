@@ -21,6 +21,10 @@ public class Rain : MonoBehaviour
     // Enter 충돌이 딱 시작되는 그 순간, 2D 환경경에서
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("충돌");
+        // 충돌하게 되면 충돌한 gameObject의 정보가 collision 안에 들어가게 됨
+        if(collision.gameObject.CompareTag("Ground"))
+        {
+            Destroy(gameObject);
+        }
     }
 }

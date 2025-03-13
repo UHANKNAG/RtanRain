@@ -31,7 +31,7 @@ public class Rtan : MonoBehaviour
             renderer.flipX = !renderer.flipX;
         }
     
-        // 화면 밖으로 넘어가지 않도록 구역 설정정
+                                        // 화면 밖으로 넘어가지 않도록 구역 설정
         if(transform.position.x > 2.6f)
         {
             renderer.flipX = true;  // 르탄이 이미지의 방향 설정정
