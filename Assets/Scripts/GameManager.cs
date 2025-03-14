@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     // 싱글톤이란? 어디서도 부를 수 있는 '하나'로 만들어주는 것!
     public static GameManager Instance;
     public GameObject rain;
+    public GameObject EndPanel;
     
     public Text totalScoreTxt;
     public Text timeTxt;
@@ -29,7 +30,16 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        totalTime -= Time.deltaTime;
+        if(totalTime > 0f) {
+            totalTime -= Time.deltaTime;
+        }
+        else {
+            totalTime = 0f;
+            EndPanel.SetActive(true);
+            Time.timeScale = 0f;
+            // time의 크기를 0으로 만든다 > 게임 내의 시간이 멈춤춤
+        }
+
         timeTxt.text = totalTime.ToString("N2");
         // N2 소숫점 둘째 자리까지만 보여 달라
     }
