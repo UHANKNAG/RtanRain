@@ -30,7 +30,8 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         totalTime -= Time.deltaTime;
-        timeTxt.text = totalTime.ToString();
+        timeTxt.text = totalTime.ToString("N2");
+        // N2 소숫점 둘째 자리까지만 보여 달라
     }
 
     void MakeRain() {
