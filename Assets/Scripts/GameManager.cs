@@ -10,8 +10,10 @@ public class GameManager : MonoBehaviour
     public GameObject rain;
     
     public Text totalScoreTxt;
+    public Text timeTxt;
 
     int totalScore;
+    float totalTime = 30.0f;
 
     private void Awake() {
         Instance = this;
@@ -27,7 +29,8 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        totalTime -= Time.deltaTime;
+        timeTxt.text = totalTime.ToString();
     }
 
     void MakeRain() {
