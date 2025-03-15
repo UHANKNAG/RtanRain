@@ -19,7 +19,7 @@ public class Rain : MonoBehaviour
 
         transform.position = new Vector3(x, y, 0);
 
-        int type = Random.Range(1, 4); // 뒷 자리는 최대값이라 +1 해서 적을 것
+        int type = Random.Range(1, 5); // 뒷 자리는 최대값이라 +1 해서 적을 것
 
         if (type == 1) {
             size = 0.8f;
@@ -35,6 +35,11 @@ public class Rain : MonoBehaviour
             size = 1.2f;
             score = 3;
             renderer.color = new Color(150 / 255f, 150 / 255f, 1f, 1f);
+        }
+        else if (type == 4) {
+            size = 0.8f;
+            score = -5;
+            renderer.color = new Color(1f, 100 / 255f, 1f, 1f);
         }
 
         transform.localScale = new Vector3(size, size, 0);
